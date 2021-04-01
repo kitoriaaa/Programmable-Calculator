@@ -1,4 +1,4 @@
-export type func = {
+export type funcType = {
   func: {
     name: string
     caption: string,
@@ -7,7 +7,7 @@ export type func = {
 }
 
 
-export const obj: func = {
+export const funcObj: funcType = {
   func: [
     {
       name: 'tax',
