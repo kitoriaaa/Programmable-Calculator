@@ -25,7 +25,7 @@ export const funcObj: funcType = {
       function: `(...param) => {
         let re = 0;
         for (let i in param) {
-          ret += param[i] * 1
+          re += param[i] * 1
         }
         return re;
       }`
@@ -36,7 +36,7 @@ export const funcObj: funcType = {
       function: `(...param) => {
         let re = 0;
         for (let i = 0; i <= param[0]; i++) {
-          ret += i;
+          re += i;
         }
         return re;
       }`
