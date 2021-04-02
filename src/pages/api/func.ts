@@ -1,4 +1,5 @@
-import { func, obj } from '../../../components/func';
+import { funcType, funcObj } from '../../../components/func';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default (req: NextApiRequest, res: NextApiResponse<func>): void => res.json(obj);
+const handler = (_: NextApiRequest, res: NextApiResponse<funcType>): void => res.json(funcObj);
+export default handler;
