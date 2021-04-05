@@ -2,11 +2,8 @@ import React, { FC, useState, useEffect } from 'react';
 import usePersist from './persist';
 import { funcObj, funcType } from './func';
 
-type Props = {
 
-};
-
-const Calc: FC<Props> = (props) => {
+const Calc: FC = () => {
   const [message, setMessage] = useState<string>('');
   const [input, setInput] = useState<string>('');
   const [data, setData] = usePersist('calc-history', []);
@@ -31,11 +28,11 @@ const Calc: FC<Props> = (props) => {
 
   const onKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      doAction(e);
+      doAction();
     }
   };
 
-  const doAction = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const doAction = () => {
     const res = eval(input);
     setMessage(res);
     data.unshift(input + ' = ' + res);
@@ -71,9 +68,6 @@ const Calc: FC<Props> = (props) => {
         <div className="form-group">
           <input type="text" value={input} className="form-control" onChange={onChange} onKeyPress={onKeyPress} />
         </div>
-        {/* {Object.entries(func.func).map((value, key) => (
-          <button className="btn btn-secondary m-1" key={key} title={value[1].caption} id={value[0]} onClick={doFunc} >{value[0]}</button>
-        ))} */}
         {
           funcObj.func.map((value, key) => (
             <button className="btn btn-secondary m-1" key={key} title={value.caption} id={key.toString()} onClick={doFunc}>{value.name}</button>
