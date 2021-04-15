@@ -1,20 +1,15 @@
 import React from 'react';
 import { NextPage } from 'next';
-import Head from 'next/head';
-import styles from 'styles/Home.module.css';
 import Calc from '../../components/Calc';
+import { Layout } from '../../components/layout';
 
 const Home: NextPage = () => {
   return (
-    <>
-      <Head>
-        <title>Programmable-Calculator</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossOrigin="anonymous"></link>
-      </Head>
+    <Layout title="Please give it a try!" header="Programmable-Calculator">
       <div className="styles.container">
         <Calc />
       </div>
-    </>
+    </Layout>
   );
 };
 
